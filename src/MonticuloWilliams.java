@@ -23,6 +23,7 @@ public class MonticuloWilliams {
             j = (j - 1) / 2;
         }
     }
+
     public void eliminarMin(){
         v[0]=v[next -1];
         next--;
@@ -54,4 +55,8 @@ public class MonticuloWilliams {
         }
 
     }
+    /// decrecer clave Idea :
+    /// pedir el el nodo(la posicion del array y el valor de la nueva clave
+    // verificar si la posicion es valida y si el valor es menor que la clave a cambiar
+    // cambiar el valor, hacer el metodo flotar ( hacer un nuevo metodo o modificar el que tengo para empezar desde el valor del nodo que se quiere
 }
