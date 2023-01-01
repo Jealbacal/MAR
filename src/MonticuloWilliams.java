@@ -11,11 +11,11 @@ public class MonticuloWilliams {
     public void insertarElemento(int val) {
         v[next] = val;
         next++;
-        flotar();
+        flotar(next-1);
     }
 
-    private void flotar() {
-        int j = next -1;
+    private void flotar(int nodo) {
+        int j = nodo;
         while (j > 0 && v[(j - 1) / 2] > v[j]) {
             int aux = v[(j - 1) / 2];
             v[(j - 1) / 2] = v[j];
@@ -28,6 +28,17 @@ public class MonticuloWilliams {
         v[0]=v[next -1];
         next--;
         hundir(0,next);
+    }
+
+    public  void decrecerClave(int nodo, int valor ){
+        if(nodo < next && v[nodo] > valor){
+            v[nodo]=valor;
+            flotar(nodo);
+        }
+        else{
+            System.out.println("el valor tiene que ser estrictamente menor");
+        }
+
     }
 
     private void hundir(int s, int l){
