@@ -1,21 +1,27 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class MonticuloWilliams {
 
-    int next;
-    int[] v;
+    private int next;
+    private Integer[] v;
 
     public MonticuloWilliams() {
         next = 0;
-        v = new int[]{};
+        v = new Integer[10000000];
     }
 
     public void insertarElemento(int val) {
-        v[next] = val;
+        v[next]=val;
+
         next++;
         flotar(next-1);
     }
 
     private void flotar(int nodo) {
         int j = nodo;
+
         while (j > 0 && v[(j - 1) / 2] > v[j]) {
             int aux = v[(j - 1) / 2];
             v[(j - 1) / 2] = v[j];
@@ -31,6 +37,7 @@ public class MonticuloWilliams {
     }
 
     public  void decrecerClave(int nodo, int valor ){
+
         if(nodo < next && v[nodo] > valor){
             v[nodo]=valor;
             flotar(nodo);
@@ -65,6 +72,24 @@ public class MonticuloWilliams {
             }
         }
 
+    }
+
+    public int min(){
+        return v[0];
+    }
+
+    public String toString(){
+        String str="[";
+        for(int i=0;i<next;i++){
+
+            if(i==next-1){
+                str+=v[i]+"]";
+            }
+            else{
+                str+=v[i]+",";
+            }
+        }
+        return str;
     }
     /// decrecer clave Idea :
     /// pedir el el nodo(la posicion del array y el valor de la nueva clave
