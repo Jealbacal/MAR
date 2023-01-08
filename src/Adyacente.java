@@ -1,8 +1,8 @@
 public class Adyacente {
     int destino;
-    double peso;
+    int peso;
 
-    public Adyacente(int destino,double peso){
+    public Adyacente(int destino,int peso){
         this.destino=destino;
         this.peso=peso;
     }

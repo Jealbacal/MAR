@@ -46,5 +46,25 @@ public class Main {
             System.out.println(monticuloP.toString());
 
         }
+
+        else if(args[0].equals("Prim")){
+            Grafo g= new Grafo(7);
+            g.insertarArista(1,2,1);
+            g.insertarArista(1,4,4);
+            g.insertarArista(2,3,2);
+            g.insertarArista(2,4,6);
+            g.insertarArista(2,5,4);
+            g.insertarArista(3,5,5);
+            g.insertarArista(3,6,6);
+            g.insertarArista(4,5,3);
+            g.insertarArista(4,7,4);
+            g.insertarArista(5,6,8);
+            g.insertarArista(6,7,3);
+
+            System.out.println(g.toString());
+
+            g.prim();
+
+        }
     }
 }
